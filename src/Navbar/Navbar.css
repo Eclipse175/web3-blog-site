@@ -1,31 +1,32 @@
 .navbar {
-    display : flex;
+    display: flex;
     justify-content: space-around;
     align-items: center;
-    padding : 4.5rem 0;
+    padding: 2rem 1rem;
 }
 
-.nav__links li{
-    display : inline-flex;
-    padding : 2rem 1.6rem;
+.nav__links li {
+    display: inline-flex;
+    padding: 1rem 0.8rem;
     font-weight: 400;
-    opacity : 0.8;
-    cursor:pointer;
+    opacity: 0.8;
+    cursor: pointer;
 }
+
 .menu {
-    display : none;
+    display: none;
 }
 
 @media screen and (max-width: 768px) {
     .nav__links li {
-        display : none;
+        display: none;
     }
-    .navbar{
+    .navbar {
         justify-content: space-between;
-        margin-left : 2rem;
+        padding: 2rem 1rem;
     }
     .menu {
-        display : block;
-        margin-right : 2rem;
+        display: block;
+        margin-right: 2%;
     }
 }
