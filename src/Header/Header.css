@@ -1,87 +1,179 @@
-header {
-    display: flex;
+/* .parent {
+    display : flex;
     justify-content: center;
     align-items: center;
+} */
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(5);
+    gap: 0px;
+    justify-content: center;
+    align-content: center;
 }
 
 .image-wrapper {
-    margin: 0 2%;
-    flex: 1;
+    grid-column: span 2;
+    margin-right: 50px;
 }
 
 .hero-img {
     object-fit: cover;
-    width: 100%;
-    height: 50vh;
+    max-width: 850px;
 }
 
 .main-content {
-    background: var(--main-color);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 2rem 2%;
-    min-height: 600px;
-    flex: 1;
+    background-color: var(--main-color);
+    color: white;
+    padding: 0 1.7em;
+    grid-column: 3/3;
+    grid-row: 1/3;
+    width: 420px;
 }
 
-.line-break {
-    width: 100%;
-    height: 1px;
-    background: white;
-    opacity: 0.5;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+.details,
+.title {
+    margin-top: 28px;
+}
+
+.main-content>h1 {
+    color: var(--secondary-color);
+}
+
+.main-content>h3 {
+    padding-top: 2em;
+    padding-bottom: 0.2em;
+}
+
+.main-content>p {
+    padding-bottom: 0.1em;
+}
+
+.title {
+    font-size: 32px;
+    color: var(--main-color);
+    grid-column: 1/1;
+    grid-row: 2;
+    width: 400px;
+    line-height: 70px;
 }
 
 .new-title {
-    color: var(--secondary-color);
-    padding-bottom: 2rem;
-    font-size: 4em;
+    padding-top: 3rem;
 }
 
-h3 {
-    font-size: 2em;
-    padding-bottom: 1rem;
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--main-color);
+    grid-column: 2/2;
+    grid-row: 2/2;
+    width: 400px;
 }
 
-p {
-    line-height: 30px;
-    font-size: 1em;
+.details>p {
+    padding-top: 0.8em;
+    font-weight: 500;
     opacity: 0.8;
 }
 
-h3,
-p {
+button {
+    background: #ff4b4b;
     color: white;
+    padding: 16px 28px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 8px;
 }
 
 @media screen and (max-width: 1280px) {
-    header {
-        flex-wrap: wrap;
-        max-width: 1000px;
-        margin: 0 auto;
+    .header {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .image-wrapper {
+        grid-column: 1/4;
+        margin-right : 0;
     }
 
     .main-content {
+        grid-column: 1/4;
+        grid-row: 3/3;
+        width : 100%;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    .details, .title {
+        margin-top : 1rem;
+    }
+
+    .details {
+        grid-row: 2/2;
         width: 100%;
-        margin-top: 4%;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .hero-img {
-        height: 40vh;
-    }
-
-    .main-content {
+@media screen and (max-width : 768px) {
+    .header {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        justify-items: center;
+        align-items: center;
+      }
+      
+      .image-wrapper {
+        margin-right: 0;
+      }
+      
+      .hero-img {
+        object-fit: cover;
+        max-width: 100%;
+      }
+      
+      .main-content {
+        background-color: var(--main-color);
+        color: white;
+        padding: 1.5em;
         width: 100%;
-        margin-top: 4%;
-    }
-
-    .image-wrapper,
-    .main-content {
-        flex-basis: 100%;
-    }
+      }
+      
+      .title {
+        font-size: 24px;
+        color: var(--main-color);
+        margin-top: 1.5em;
+        line-height: 1.2;
+      }
+      
+      .new-title {
+        margin-top: 1.5em;
+      }
+      
+      .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        color: var(--main-color);
+        margin-top: 1.5em;
+      }
+      
+      .details > p {
+        margin-top: 0.5em;
+      }
+      
+      button {
+        background: #ff4b4b;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 6px;
+        margin-top: 1.5em;
+      }
 }
